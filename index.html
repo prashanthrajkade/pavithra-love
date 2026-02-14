@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine's Day ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+    overflow-x:hidden;
+    color:white;
+    text-align:center;
+}
+
+.container{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    animation:fadeIn 2s;
+}
+
+h1{
+    font-family:'Great Vibes',cursive;
+    font-size:50px;
+    margin:10px;
+}
+
+button{
+    padding:15px 35px;
+    border:none;
+    border-radius:30px;
+    font-size:18px;
+    background:white;
+    color:#ff4b6e;
+    cursor:pointer;
+    box-shadow:0 0 20px rgba(255,255,255,0.9);
+    transition:0.3s;
+}
+button:hover{
+    transform:scale(1.1);
+}
+
+.story{
+    display:none;
+    padding:30px;
+    animation:fadeIn 2s ease;
+}
+
+img{
+    width:260px;
+    border-radius:20px;
+    box-shadow:0 0 40px rgba(255,255,255,1);
+    margin:20px;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+.heart{
+    position:fixed;
+    top:-10px;
+    color:red;
+    animation:fall 6s linear infinite;
+}
+
+@keyframes fall{
+    to{transform:translateY(110vh);}
+}
+
+.final-btn{
+    margin:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container" id="cover">
+    <h1>Happy Valentine's Day</h1>
+    <h2>Pavithra Chinna Verra Reddy ❤️</h2>
+    <p>Maybe God planned our love when we first met at Hammaun Temple…</p>
+    <button onclick="openStory()">Open My Heart ❤️</button>
+</div>
+
+<div class="story" id="story">
+
+    <img src="photo.jpg" alt="our photo">
+
+    <h1>My Love 💕</h1>
+
+    <p>
+Every time I look at you my heart slows down and my world becomes peaceful ❤️‍🔥<br><br>
+You are the warmth my soul runs to…  
+The touch that calms me…  
+The presence that makes everything feel right…<br><br>
+I fall in love with you in the quiet moments…  
+When you smile at me…  
+When you hold my hand…  
+When you look at me like I am your home 🏠<br><br>
+You are my first thought in the morning…  
+My comfort at night…  
+My forever in this life and every life after 🌙✨<br><br>
+Every bike ride… every moment with you…  
+Feels like our own universe made only for us ❤️<br><br>
+Happy Valentine’s Day my forever woman ❤️💋<br><br>
+I choose you with my whole heart always…<br><br>
+— Yours Forever,<br>
+Prashanth Rajkade  💕
+    </p>
+
+    <button class="final-btn" onclick="love()">Will You Be Mine Forever? 💍</button>
+    <button class="final-btn" onclick="love()">I Love You Always ❤️</button>
+
+</div>
+
+<audio id="music" loop>
+  <source src="music.wav" type="audio/wav">
+</audio>
+
+<script>
+
+function openStory(){
+    document.getElementById("cover").style.display="none";
+    document.getElementById("story").style.display="block";
+    const music = document.getElementById("music");
+    music.play().catch(()=>{});
+}
+
+function love(){
+    alert("I Love You Forever Pavithra ❤️");
+}
+
+function hearts(){
+    const heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(Math.random()*20+20)+"px";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),6000);
+}
+setInterval(hearts,400);
+
+</script>
+
+</body>
+</html>
